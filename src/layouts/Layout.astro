@@ -1,0 +1,326 @@
+---
+import "../styles/global.css";
+import { slide, ViewTransitions } from "astro:transitions";
+
+interface Props {
+  title: string;
+  content: string;
+}
+
+const { title, content } = Astro.props;
+---
+
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="tidebase-logo.png" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <title>{title}</title>
+    <ViewTransitions />
+    <meta name="description" {content} />
+
+    <!-- Facebook Meta Tags -->
+    <meta
+      property="og:url"
+      content="https://www.dynamictotalservices.com.au/"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Dynamic Total Services" />
+    <meta property="og:description" {content} />
+    <meta
+      property="og:image"
+      content="https://res.cloudinary.com/dddjzeutf/image/upload/v1692365778/og-image_gh8bz7.png"
+    />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="dynamictotalservices.com.au" />
+    <meta
+      property="twitter:url"
+      content="https://www.dynamictotalservices.com.au/"
+    />
+    <meta name="twitter:title" content="Dynamic Total Services" />
+    <meta name="twitter:description" {content} />
+    <meta
+      name="twitter:image"
+      content="https://res.cloudinary.com/dddjzeutf/image/upload/v1692365778/og-image_gh8bz7.png"
+    />
+  </head>
+
+  <body class="bg-[#f3f3f3] text-black">
+    <!-- transition:animate={slide({ duration: "0.2s" })} -->
+    <header
+      transition:persist
+      transition:name="header"
+      id="head"
+      class="flex h-28 justify-between bg-secondaryBg text-white items-center px-9 lg:px-48"
+    >
+      <a
+        href="/"
+        class="flex gap-2 items-center text-lg font-bold opacity-85 hover:opacity-100"
+        ><img src="/tidebase-logo.png" alt="tidebase logo" class="w-9 h-9" />
+        <p class="hidden lg:block">Tidebase</p></a
+      >
+      <button id="menu-icon">
+        <svg
+          width="9"
+          height="34"
+          viewBox="0 0 9 34"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="lg:hidden"
+        >
+          <path
+            d="M0.417969 16.9987C0.417969 18.1038 0.848177 19.1636 1.61395 19.945C2.37972 20.7264 3.41833 21.1654 4.5013 21.1654C5.58427 21.1654 6.62288 20.7264 7.38865 19.945C8.15443 19.1636 8.58463 18.1038 8.58463 16.9987C8.58463 15.8936 8.15443 14.8338 7.38865 14.0524C6.62288 13.271 5.58427 12.832 4.5013 12.832C3.41833 12.832 2.37972 13.271 1.61395 14.0524C0.848177 14.8338 0.417969 15.8936 0.417969 16.9987ZM0.417969 4.4987C0.417969 5.60377 0.848177 6.66357 1.61395 7.44498C2.37972 8.22638 3.41833 8.66536 4.5013 8.66536C5.58427 8.66536 6.62288 8.22638 7.38865 7.44498C8.15443 6.66357 8.58463 5.60377 8.58463 4.4987C8.58463 3.39363 8.15443 2.33382 7.38865 1.55242C6.62288 0.771018 5.58427 0.332031 4.5013 0.332031C3.41833 0.332031 2.37972 0.771018 1.61395 1.55242C0.848177 2.33382 0.417969 3.39363 0.417969 4.4987ZM0.417969 29.4987C0.417969 30.6038 0.848177 31.6636 1.61395 32.445C2.37972 33.2264 3.41833 33.6654 4.5013 33.6654C5.58427 33.6654 6.62288 33.2264 7.38865 32.445C8.15443 31.6636 8.58463 30.6038 8.58463 29.4987C8.58463 28.3936 8.15443 27.3338 7.38865 26.5524C6.62288 25.771 5.58427 25.332 4.5013 25.332C3.41833 25.332 2.37972 25.771 1.61395 26.5524C0.848177 27.3338 0.417969 28.3936 0.417969 29.4987Z"
+            fill="white"></path>
+        </svg>
+      </button>
+      <button id="close" class="text-4xl hidden lg:hidden"> X</button>
+      <nav
+        id="nav"
+        class="flex gap-5 w-full left-0 absolute transition-transform z-50 flex-col py-8 px-6 top-20 lg:w-auto lg:px-0 lg:static lg:gap-10 lg:flex-row lg:translate-x-0 lg:py-0 bg-secondaryBg -translate-x-full"
+      >
+        <details id="resources-menu" class="group relative">
+          <summary
+            class="link flex cursor-pointer items-center gap-2 px-3 opacity-85 hover:opacity-100"
+          >
+            Company
+            <span class="sr-only">Open company menu</span>
+            <svg
+              width="22"
+              height="13"
+              viewBox="0 0 22 13"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="inline-block size-3 rotate-0 transition-transform group-open:-rotate-180"
+              aria-hidden="true"
+              ><path d="M1 1L11 11L21 1" stroke="currentColor" stroke-width="2"
+              ></path></svg
+            >
+          </summary>
+          <menu
+            class="flex flex-col relative lg:absolute bg-secondaryBg left-3 pb-2 translate-y-2 lg:min-w-max shadow-lg invisible rounded group-open:visible origin-top scale-95 group-open:scale-100 opacity-0 group-open:opacity-100 lg:transition-all gap-3 lg:top-6 lg:px-3"
+          >
+            <li>
+              <a
+                href="/about-us"
+                class="rounded-md p-3 leading-none transition hover:underline"
+              >
+                About
+              </a>
+            </li>
+            <li>
+              <a
+                href="/contact-us"
+                class="rounded-md p-3 leading-none transition hover:underline"
+              >
+                Contact
+              </a>
+            </li>
+            <li>
+              <a
+                href="/privacy-policy"
+                class="rounded-md p-3 leading-none transition hover:underline"
+              >
+                Privacy policy
+              </a>
+            </li>
+            <li class="lg:pb-3">
+              <a
+                href="/terms-of-use"
+                class="rounded-md p-3 leading-none transition hover:underline"
+              >
+                Terms of use
+              </a>
+            </li>
+          </menu>
+        </details>
+        <details id="resources-menu" class="group relative">
+          <summary
+            class="link flex cursor-pointer items-center gap-2 px-3 opacity-85 hover:opacity-100"
+          >
+            Products
+            <span class="sr-only">Open products menu</span>
+            <svg
+              width="22"
+              height="13"
+              viewBox="0 0 22 13"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="inline-block size-3 rotate-0 transition-transform group-open:-rotate-180"
+              aria-hidden="true"
+              ><path d="M1 1L11 11L21 1" stroke="currentColor" stroke-width="2"
+              ></path></svg
+            >
+          </summary>
+          <menu
+            class="flex flex-col relative lg:absolute bg-secondaryBg left-3 pb-2 translate-y-2 lg:min-w-max shadow-lg invisible rounded group-open:visible origin-top scale-95 group-open:scale-100 opacity-0 group-open:opacity-100 lg:transition-all gap-3 lg:top-6 lg:px-3"
+          >
+            <li>
+              <a
+                href=""
+                class="rounded-md p-3 leading-none transition hover:underline"
+              >
+                Money Transfer
+              </a>
+            </li>
+            <li>
+              <a
+                href=""
+                class="rounded-md p-3 leading-none transition hover:underline"
+              >
+                Virtual cards
+              </a>
+            </li>
+            <li>
+              <a
+                href=""
+                class="rounded-md p-3 leading-none transition hover:underline"
+              >
+                Foreign accounts
+              </a>
+            </li>
+            <li class="lg:pb-3">
+              <a
+                href=""
+                class="rounded-md p-3 leading-none transition hover:underline"
+              >
+                Currency exchange
+              </a>
+            </li>
+          </menu>
+        </details>
+      </nav>
+    </header>
+    <slot
+      transition:animate={slide({ duration: "0.4s" })}
+      transition:name="main"
+    />
+    <footer
+      class="text-center pb-8 lg:pt-[105px] lg:px-[90px] relative bg-secondaryBg text-white lg:mt-52"
+    >
+      <div
+        class="pt-10 lg:pt-0 px-[52px] h-60 border-b flex flex-col lg:flex-row lg:px-24 justify-between lg:bg-[url('/bg.svg')] lg:absolute lg:-top-48 lg:w-[calc(100vw-180px)] lg:h-[unset] lg:bg-contain lg:border bg-secondaryBg"
+      >
+        <span class="lg:w-[31vw] flex-1">
+          <h3
+            class="text-[22px] md:text-3xl xl:text-4xl 2xl:text-6xl mb-12 lg:mb-14 lg:mt-[101px] text-center lg:text-left font-Righteous"
+          >
+            Download Tidebase
+          </h3>
+          <span
+            class="flex gap-3 justify-center items-center lg:w-[29vw] max-w-96 mx-auto lg:max-w-none lg:mx-0"
+          >
+            <a class="w-32 lg:w-[390px]" href="" target="_blank"
+              ><img
+                src="/play-store.png"
+                alt="link to tidebase app on play store"
+              />
+            </a>
+            <a class="w-32 lg:w-[390px]" href="" target="_blank"
+              ><img
+                src="/app-store.png"
+                alt="link to tidebase app on app store"
+              /></a
+            >
+          </span></span
+        >
+        <img
+          src="/iphone.png"
+          alt="tidebase app on phone"
+          class="mx-auto mt-10 lg:w-[429px] hidden lg:block"
+        />
+      </div>
+      <p class="text-xs mt-4 lg:mt-20 lg:mb-14 mb-5 px-16 lg:text-xl">
+        Tidebase is a financial technology company, not a bank. Banking services
+        are provided by licensed banking partners.
+      </p>
+      <p class="text-[#9E9E9E] text-xs mb-1">Tidebase technologies limited</p>
+      <p class="text-[#9E9E9E] text-xs lg:mb-8">© 2024, All rights reserved</p>
+    </footer>
+    <script is:inline>
+      let ham = false;
+      const menuIcon = document.getElementById("menu-icon");
+      const closeIcon = document.getElementById("close");
+      const navBar = document.getElementById("nav");
+      //   const navItem = document.querySelectorAll(".px-3");
+      const detailsToggle = document.getElementById("resources-menu");
+      const details = Array.from(document.querySelectorAll("details"));
+
+      let ddStatus = 1;
+
+      function openMenu() {
+        ham = true;
+        menuIcon.setAttribute("aria-expanded", "true");
+        navBar.classList.remove("-translate-x-full");
+        menuIcon.classList.add("hidden");
+        closeIcon.classList.remove("hidden");
+      }
+
+      function closeMenu() {
+        ham = false;
+        menuIcon.setAttribute("aria-expanded", "false");
+        navBar.classList.add("-translate-x-full");
+        menuIcon.classList.remove("hidden");
+        closeIcon.classList.add("hidden");
+      }
+
+      function menuToggle() {
+        if (ham) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      }
+
+      menuIcon.addEventListener("click", menuToggle);
+      closeIcon.addEventListener("click", closeMenu);
+      //   document.addEventListener("mousedown", function (e) {
+      //     details.forEach(
+      //       (dd) => (dd.firstElementChild.style.pointerEvents = "auto")
+      //     );
+      //     const active = e.target;
+      //     if (
+      //       active.matches("summary") &&
+      //       !active.parentElement.hasAttribute("open")
+      //     ) {
+      //       ddStatus = details.indexOf(active.parentElement);
+      //     }
+      //     details.forEach((dd) => (dd.open = false));
+      //   });
+
+      //   details.forEach(
+      //     (dd) =>
+      //       (dd.ontoggle = function (e) {
+      //         const active = e.target;
+      //         let position = details.indexOf(active);
+      //         if (ddStatus === position) {
+      //           active.open = true;
+      //           active.firstElementChild.style.pointerEvents = "none";
+      //         }
+      //         ddStatus = 1;
+      //       })
+      //   );
+
+      document.addEventListener("click", function (e) {
+        // details.forEach
+        if (!detailsToggle?.contains(e.target)) {
+          detailsToggle.removeAttribute("open");
+        }
+        // if (
+        //   !e.target?.matches("#menu-icon") &&
+        //   !menu?.contains(e.target)
+        //   //  && !detailsToggle?.contains(e.target) &&
+        //   // !e.target?.matches("#detailsToggle")
+        // ) {
+        //   closeMenu();
+        // }
+      });
+
+      //   navItem.forEach((element) => {
+      //     element.addEventListener("click", closeMenu);
+      //   });
+    </script>
+  </body>
+</html>

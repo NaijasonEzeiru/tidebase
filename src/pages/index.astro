@@ -1,0 +1,182 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+---
+
+<Layout
+  title="Tidebase"
+  content="The landing page of Tidebase. - Enjoy near-instantaneous transaction processing ensuring your payments and transfers are completed swiftly. Our real-time technology provides instant confirmation, available 24/7 for seamless financial management. Trust our robust security measures to safeguard your transactions at all times."
+>
+  <main>
+    <Hero />
+    <section>
+      <div
+        class="flex flex-col lg:flex-row gap-8 px-9 lg:px-40 pb-12 lg:pb-40 pt-[35px] lg:py-[101px]"
+      >
+        <span
+          class="rounded-[20px] shadow-lg pb-9 lg:pb-14 px-9 pt-3 lg:pt-6 flex flex-col gap-3 lg:gap-5"
+        >
+          <img
+            src="/instant-widthdrawal.png"
+            alt="clock"
+            class="size-12 lg:size-[52px]"
+          />
+          <h5 class="text-lg md:text-2xl font-Righteous">Fast transctions</h5>
+          <p class="text-sm text-[#626262]">
+            Enjoy near-instantaneous transaction processing ensuring your
+            payments and transfers are completed swiftly. Our real-time
+            technology provides instant confirmation, available 24/7 for
+            seamless financial management. Trust our robust security measures to
+            safeguard your transactions at all times.
+          </p>
+        </span>
+        <span
+          class="rounded-[20px] shadow-lg pb-9 lg:pb-14 px-9 pt-3 lg:pt-6 flex flex-col gap-5"
+        >
+          <img
+            src="/secured-payments.png"
+            alt="Security confirmed"
+            class="size-[52px]"
+          />
+          <h5 class="text-lg md:text-2xl font-Righteous">Secured payments</h5>
+          <p class="text-sm text-[#626262]">
+            Transact with confidence using, Our robust encryption and
+            authentication protocols ensure that your payments are protected
+            from unauthorized access. Enjoy peace of mind knowing that your
+            financial information is safeguarded at all times. We provide secure
+            payments that prioritize your privacy and security. Experience
+            seamless and worry-free transactions with us today!
+          </p>
+        </span>
+        <span
+          class="rounded-[20px] shadow-lg pb-9 lg:pb-14 px-9 pt-3 lg:pt-6 flex flex-col gap-5"
+        >
+          <img
+            src="/instant-conversion.png"
+            alt="conversion"
+            class="size-[52px]"
+          />
+          <h5 class="text-lg md:text-2xl font-Righteous">Instant conversion</h5>
+          <p class="text-sm text-[#626262]">
+            Convert currencies instantly, providing real-time rates for accurate
+            exchanges. Our intuitive interface allows users to convert
+            currencies effortlessly with just a few taps. Enjoy transparency and
+            reliability in currency conversions, ensuring you get the best value
+            for your transactions. Experience seamless financial flexibility
+            with our instant currency conversion feature.
+          </p>
+        </span>
+      </div>
+      <div class="flex flex-col md:flex-row-reverse gap-11 lg:px-36">
+        <div class="px-6 lg:px-0 lg:grow lg:w-3/5">
+          <img
+            src="/virtual-usd-cards.jpg"
+            alt="Virtual card"
+            class="rounded-2xl lg:rounded-3xl w-full"
+          />
+        </div>
+        <img
+          src="/looking-at-phone.jpg"
+          alt="a man checking his phone"
+          class="rounded-3xl hidden lg:block grow w-2/5"
+        />
+        <img
+          src="/looking-at-phone-mobile.jpg"
+          alt="a man checking his phone"
+          class="lg:hidden"
+        />
+      </div>
+    </section>
+    <div
+      class="text-center pt-12 pb-12 lg:mx-36 lg:pt-24 lg:pb-0 lg:px-20 bg-gradient-to-br from-[#0f73e133] to-[#0617ad33] mt-20 px-6 relative overflow-hidden"
+    >
+      <h3
+        class="font-semibold text-2xl mb-3 lg:text-4xl xl:text-[60px] xl:leading-[4.5rem]"
+      >
+        Receive money globally, get dedicated foreign virtual accounts.
+      </h3>
+      <p class="font-medium text-sm px-9 lg:text-lg xl:text-4xl xl:px-36">
+        Get a dedicated US, UK, Ghana etc. dedicated virtual accounts to receive
+        foreign payments.
+      </p>
+      <div class="h-72 lg:hidden"></div>
+      <div class="flex justify-evenly w-full lg:relative lg:px-0 lg:-bottom-28">
+        <img
+          src="/usa.png"
+          alt="USA's flag"
+          class="shrink size-9 md:size-14 xl:size-[80px]"
+        />
+        <img
+          src="/ngn.png"
+          alt="Nigeria's flag"
+          class="shrink size-9 md:size-14 xl:size-[80px]"
+        />
+        <img
+          src="/uk.png"
+          alt="United kingdom's flag"
+          class="shrink size-9 md:size-14 xl:size-[80px]"
+        />
+        <img
+          src="/world.png"
+          alt="the world"
+          class="absolute bottom-24 left-0 right-0 mx-auto lg:relative lg:-bottom-0 lg:mx-0"
+        />
+        <img
+          src="/kenya.png"
+          alt="Kenya's flag"
+          class="shrink size-9 md:size-14 xl:size-[80px]"
+        />
+        <img
+          src="/ghana.png"
+          alt="Ghana's flag"
+          class="shrink size-9 md:size-14 xl:size-[80px]"
+        />
+        <img
+          src="/sa.png"
+          alt="South's africa flag"
+          class="shrink size-9 md:size-14 xl:size-[80px]"
+        />
+      </div>
+    </div>
+    <div class="text-center mt-20 lg:mt-32 mx-8">
+      <h3 class="font-semibold text-2xl lg:text-3xl">Trusted by</h3>
+      <div
+        class="grid grid-cols-2 items-center justify-items-center gap-8 mt-9 lg:grid-cols-4 lg:px-56"
+      >
+        <img src="/paypal.png" alt="paypal's logo" />
+        <img src="/safehaven.png" alt="safehaven's logo" />
+        <img src="/bridge.png" alt="bridge's logo" />
+        <img src="/west-wallet.png" alt="west wallet's logo" />
+      </div>
+    </div>
+    <div
+      class="flex gap-6 overflow-x-scroll mx-8 mb-14 mt-16 md:grid grid-cols-3 md:mx-[90px] md:overflow-x-hidden"
+    >
+      <img
+        src="/competitive-exchange-rates.png"
+        alt="competitive exchange-rates"
+        class="w-64 md:w-full"
+      />
+      <img
+        src="/zero-acct-maintainance.png"
+        alt="zero account maintaince fee"
+        class="w-64 md:w-full"
+      />
+      <img
+        src="/Iban.png"
+        alt="iban for your business needs"
+        class="w-64 md:w-full"
+      />
+    </div>
+    <div
+      class="bg-[#3D656E] lg:mx-[90px] lg:px-28 lg:py-11 lg:rounded-xl flex px-6 py-7 items-center lg:gap-8 lg:mb-72"
+    >
+      <p
+        class="text-white text-xl sm:text-4xl xl:text-[60px] xl:leading-tight font-extrabold"
+      >
+        Easily convert from one currency to another with zero charges.
+      </p>
+      <img src="world-currencies.png" alt="world currencies" class="w-[54%]" />
+    </div>
+  </main>
+</Layout>
