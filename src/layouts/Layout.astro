@@ -1,6 +1,12 @@
 ---
-import "../styles/global.css";
+import { Image } from "astro:assets";
 import { slide, ViewTransitions } from "astro:transitions";
+import "../styles/global.css";
+
+import appStore from "../assets/app-store.png";
+import playStore from "../assets/play-store.png";
+import iphone from "../assets/iphone.png";
+import tidebaseLogo from "../assets/tidebase-logo.png";
 
 interface Props {
   title: string;
@@ -59,7 +65,7 @@ const { title, content } = Astro.props;
       <a
         href="/"
         class="flex gap-2 items-center text-lg font-bold opacity-85 hover:opacity-100"
-        ><img src="/tidebase-logo.png" alt="tidebase logo" class="w-9 h-9" />
+        ><Image src={tidebaseLogo} alt="tidebase logo" class="w-9 h-9" />
         <p class="hidden lg:block">Tidebase</p></a
       >
       <button id="menu-icon">
@@ -213,21 +219,21 @@ const { title, content } = Astro.props;
             class="flex gap-3 justify-center items-center lg:w-[29vw] max-w-96 mx-auto lg:max-w-none lg:mx-0"
           >
             <a class="w-32 lg:w-[390px]" href="" target="_blank"
-              ><img
-                src="/play-store.png"
+              ><Image
+                src={playStore}
                 alt="link to tidebase app on play store"
               />
             </a>
             <a class="w-32 lg:w-[390px]" href="" target="_blank"
-              ><img
-                src="/app-store.png"
+              ><Image
+                src={appStore}
                 alt="link to tidebase app on app store"
               /></a
             >
           </span></span
         >
-        <img
-          src="/iphone.png"
+        <Image
+          src={iphone}
           alt="tidebase app on phone"
           class="mx-auto mt-10 lg:w-[429px] hidden lg:block"
         />
