@@ -25,6 +25,14 @@
   -webkit-text-size-adjust: 100%;
 }
 
+.inter {
+  font-family: inter;
+}
+
+.righteous {
+  font-family: righteous;
+}
+
 /* * {
   outline: red solid 1px !important;
 } */

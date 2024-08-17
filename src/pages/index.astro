@@ -10,8 +10,8 @@ import iban from "../assets/Iban.png";
 import instantConversion from "../assets/instant-conversion.png";
 import instantWidthdrawal from "../assets/instant-widthdrawal.png";
 import kenya from "../assets/kenya.png";
-import lookingAtPhoneMobile from "../assets/looking-at-phone-mobile.jpg";
-import lookingAtPhone from "../assets/looking-at-phone.jpg";
+import lookingAtPhoneMobile from "../assets/looking-at-phone-mobile.png";
+import lookingAtPhone from "../assets/looking-at-phone.png";
 import ngn from "../assets/ngn.png";
 import paypal from "../assets/paypal.png";
 import safehaven from "../assets/safehaven.png";
@@ -34,6 +34,7 @@ import zeroAcctMaintainance from "../assets/zero-acct-maintainance.png";
     <Hero />
     <section>
       <div
+        id="money-transfer"
         class="flex flex-col lg:flex-row gap-8 px-9 lg:px-40 pb-12 lg:pb-40 pt-[35px] lg:py-[101px]"
       >
         <span
@@ -44,7 +45,9 @@ import zeroAcctMaintainance from "../assets/zero-acct-maintainance.png";
             alt="clock"
             class="size-12 lg:size-[52px]"
           />
-          <h5 class="text-lg md:text-2xl font-Righteous">Fast transctions</h5>
+          <h5 class="text-lg md:text-2xl font-Righteous righteous">
+            Fast transctions
+          </h5>
           <p class="text-sm text-[#626262]">
             Enjoy near-instantaneous transaction processing ensuring your
             payments and transfers are completed swiftly. Our real-time
@@ -61,7 +64,9 @@ import zeroAcctMaintainance from "../assets/zero-acct-maintainance.png";
             alt="Security confirmed"
             class="size-[52px]"
           />
-          <h5 class="text-lg md:text-2xl font-Righteous">Secured payments</h5>
+          <h5 class="text-lg md:text-2xl font-Righteous righteous">
+            Secured payments
+          </h5>
           <p class="text-sm text-[#626262]">
             Transact with confidence using, Our robust encryption and
             authentication protocols ensure that your payments are protected
@@ -75,7 +80,9 @@ import zeroAcctMaintainance from "../assets/zero-acct-maintainance.png";
           class="rounded-[20px] shadow-lg pb-9 lg:pb-14 px-9 pt-3 lg:pt-6 flex flex-col gap-5"
         >
           <Image src={instantConversion} alt="conversion" class="size-[52px]" />
-          <h5 class="text-lg md:text-2xl font-Righteous">Instant conversion</h5>
+          <h5 class="text-lg md:text-2xl font-Righteous righteous">
+            Instant conversion
+          </h5>
           <p class="text-sm text-[#626262]">
             Convert currencies instantly, providing real-time rates for accurate
             exchanges. Our intuitive interface allows users to convert
@@ -86,27 +93,33 @@ import zeroAcctMaintainance from "../assets/zero-acct-maintainance.png";
           </p>
         </span>
       </div>
-      <div class="flex flex-col md:flex-row-reverse gap-11 lg:px-36">
+      <div
+        id="virtual-cards"
+        class="flex flex-col md:flex-row-reverse gap-11 lg:px-36"
+      >
         <div class="px-6 lg:px-0 lg:grow lg:w-3/5">
           <Image
             src={virtualUsdCards}
             alt="Virtual card"
-            class="rounded-2xl lg:rounded-3xl w-full"
+            class="rounded-2xl md:rounded-3xl w-full"
           />
         </div>
         <Image
           src={lookingAtPhone}
           alt="a man checking his phone"
-          class="rounded-3xl hidden lg:block grow w-2/5"
+          class="rounded-3xl hidden md:block grow w-2/5"
         />
-        <Image
-          src={lookingAtPhoneMobile}
-          alt="a man checking his phone"
-          class="lg:hidden"
-        />
+        <div class="w-full bg-[#48A6BA] pt-8 md:hidden">
+          <Image
+            src={lookingAtPhoneMobile}
+            alt="a man checking his phone"
+            class="md:hidden mx-auto bg-[#48A6BA]"
+          />
+        </div>
       </div>
     </section>
     <div
+      id="foreign-accounts"
       class="text-center pt-12 pb-12 lg:mx-36 lg:pt-24 lg:pb-0 lg:px-20 bg-gradient-to-br from-[#0f73e133] to-[#0617ad33] mt-20 px-6 relative overflow-hidden"
     >
       <h3
@@ -169,6 +182,7 @@ import zeroAcctMaintainance from "../assets/zero-acct-maintainance.png";
       </div>
     </div>
     <div
+      id="currency-exchange"
       class="flex gap-6 overflow-x-scroll mx-8 mb-14 mt-16 md:grid grid-cols-3 md:mx-[90px] md:overflow-x-hidden"
     >
       <Image

@@ -1,6 +1,8 @@
 ---
 import { Image } from "astro:assets";
 import { slide, ViewTransitions } from "astro:transitions";
+import "@fontsource/inter";
+import "@fontsource/righteous";
 import "../styles/global.css";
 
 import appStore from "../assets/app-store.png";
@@ -22,12 +24,19 @@ const { title, content } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="tidebase-logo.png" />
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
     <title>{title}</title>
     <ViewTransitions />
     <meta name="description" {content} />
 
     <!-- Facebook Meta Tags -->
-    <meta
+    <!-- <meta
       property="og:url"
       content="https://www.dynamictotalservices.com.au/"
     />
@@ -39,7 +48,6 @@ const { title, content } = Astro.props;
       content="https://res.cloudinary.com/dddjzeutf/image/upload/v1692365778/og-image_gh8bz7.png"
     />
 
-    <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="twitter:domain" content="dynamictotalservices.com.au" />
     <meta
@@ -51,7 +59,7 @@ const { title, content } = Astro.props;
     <meta
       name="twitter:image"
       content="https://res.cloudinary.com/dddjzeutf/image/upload/v1692365778/og-image_gh8bz7.png"
-    />
+    /> -->
   </head>
 
   <body class="bg-[#f3f3f3] text-black">
@@ -87,7 +95,7 @@ const { title, content } = Astro.props;
         id="nav"
         class="flex gap-5 w-full left-0 absolute transition-transform z-50 flex-col py-8 px-6 top-20 lg:w-auto lg:px-0 lg:static lg:gap-10 lg:flex-row lg:translate-x-0 lg:py-0 bg-secondaryBg -translate-x-full"
       >
-        <details id="resources-menu" class="group relative">
+        <details id="page-nav" class="group relative">
           <summary
             class="link flex cursor-pointer items-center gap-2 px-3 opacity-85 hover:opacity-100"
           >
@@ -142,7 +150,7 @@ const { title, content } = Astro.props;
             </li>
           </menu>
         </details>
-        <details id="resources-menu" class="group relative">
+        <details id="section-nav" class="group relative">
           <summary
             class="link flex cursor-pointer items-center gap-2 px-3 opacity-85 hover:opacity-100"
           >
@@ -165,7 +173,7 @@ const { title, content } = Astro.props;
           >
             <li>
               <a
-                href=""
+                href="/#money-transfer"
                 class="rounded-md p-3 leading-none transition hover:underline"
               >
                 Money Transfer
@@ -173,7 +181,7 @@ const { title, content } = Astro.props;
             </li>
             <li>
               <a
-                href=""
+                href="/#virtual-cards"
                 class="rounded-md p-3 leading-none transition hover:underline"
               >
                 Virtual cards
@@ -181,7 +189,7 @@ const { title, content } = Astro.props;
             </li>
             <li>
               <a
-                href=""
+                href="/#foreign-accounts"
                 class="rounded-md p-3 leading-none transition hover:underline"
               >
                 Foreign accounts
@@ -189,7 +197,7 @@ const { title, content } = Astro.props;
             </li>
             <li class="lg:pb-3">
               <a
-                href=""
+                href="/#currency-exchange"
                 class="rounded-md p-3 leading-none transition hover:underline"
               >
                 Currency exchange
@@ -204,19 +212,19 @@ const { title, content } = Astro.props;
       transition:name="main"
     />
     <footer
-      class="text-center pb-8 lg:pt-[105px] lg:px-[90px] relative bg-secondaryBg text-white lg:mt-52"
+      class="text-center pb-8 lg:pt-[105px] lg:px-[90px] xl:pt-44 relative bg-secondaryBg text-white lg:mt-52"
     >
       <div
-        class="pt-10 lg:pt-0 px-[52px] h-60 border-b flex flex-col lg:flex-row lg:px-24 justify-between lg:bg-[url('/bg.svg')] lg:absolute lg:-top-48 lg:w-[calc(100vw-180px)] lg:h-[unset] lg:bg-contain lg:border bg-secondaryBg"
+        class="pt-10 lg:pt-0 xl:h-[400px] xl:-top-60 px-[52px] h-60 border-b flex flex-col lg:flex-row lg:px-24 justify-between lg:bg-[url('/bg.svg')] lg:absolute lg:-top-48 lg:w-[calc(100vw-180px)] lg:h-[unset] lg:bg-contain lg:border bg-secondaryBg"
       >
         <span class="lg:w-[31vw] flex-1">
           <h3
-            class="text-[22px] md:text-3xl xl:text-4xl 2xl:text-6xl mb-12 lg:mb-14 lg:mt-[101px] text-center lg:text-left font-Righteous"
+            class="text-[22px] md:text-3xl xl:text-4xl mb-12 lg:mb-14 lg:mt-[101px] text-center lg:text-left font-Righteous righteous"
           >
             Download Tidebase
           </h3>
           <span
-            class="flex gap-3 justify-center items-center lg:w-[29vw] max-w-96 mx-auto lg:max-w-none lg:mx-0"
+            class="flex gap-9 justify-center items-center lg:w-[29vw] max-w-96 mx-auto lg:max-w-none lg:mx-0"
           >
             <a class="w-32 lg:w-[390px]" href="" target="_blank"
               ><Image
@@ -251,7 +259,8 @@ const { title, content } = Astro.props;
       const closeIcon = document.getElementById("close");
       const navBar = document.getElementById("nav");
       //   const navItem = document.querySelectorAll(".px-3");
-      const detailsToggle = document.getElementById("resources-menu");
+      const pageNavToggle = document.getElementById("page-nav");
+      const sectionNavToggle = document.getElementById("section-nav");
       const details = Array.from(document.querySelectorAll("details"));
 
       let ddStatus = 1;
@@ -282,51 +291,22 @@ const { title, content } = Astro.props;
 
       menuIcon.addEventListener("click", menuToggle);
       closeIcon.addEventListener("click", closeMenu);
-      //   document.addEventListener("mousedown", function (e) {
-      //     details.forEach(
-      //       (dd) => (dd.firstElementChild.style.pointerEvents = "auto")
-      //     );
-      //     const active = e.target;
-      //     if (
-      //       active.matches("summary") &&
-      //       !active.parentElement.hasAttribute("open")
-      //     ) {
-      //       ddStatus = details.indexOf(active.parentElement);
-      //     }
-      //     details.forEach((dd) => (dd.open = false));
-      //   });
-
-      //   details.forEach(
-      //     (dd) =>
-      //       (dd.ontoggle = function (e) {
-      //         const active = e.target;
-      //         let position = details.indexOf(active);
-      //         if (ddStatus === position) {
-      //           active.open = true;
-      //           active.firstElementChild.style.pointerEvents = "none";
-      //         }
-      //         ddStatus = 1;
-      //       })
-      //   );
 
       document.addEventListener("click", function (e) {
-        // details.forEach
-        if (!detailsToggle?.contains(e.target)) {
-          detailsToggle.removeAttribute("open");
+        if (
+          !pageNavToggle?.contains(e.target) ||
+          !sectionNavToggle?.contains(e.target)
+        ) {
+          closeDetails();
         }
-        // if (
-        //   !e.target?.matches("#menu-icon") &&
-        //   !menu?.contains(e.target)
-        //   //  && !detailsToggle?.contains(e.target) &&
-        //   // !e.target?.matches("#detailsToggle")
-        // ) {
-        //   closeMenu();
-        // }
       });
+      document.addEventListener("astro:after-swap", closeDetails);
 
-      //   navItem.forEach((element) => {
-      //     element.addEventListener("click", closeMenu);
-      //   });
+      function closeDetails() {
+        pageNavToggle.removeAttribute("open");
+        sectionNavToggle.removeAttribute("open");
+      }
+      closeDetails();
     </script>
   </body>
 </html>
