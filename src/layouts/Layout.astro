@@ -279,6 +279,7 @@ const { title, content } = Astro.props;
         navBar.classList.add("-translate-x-full");
         menuIcon.classList.remove("hidden");
         closeIcon.classList.add("hidden");
+        console.log("close");
       }
 
       function menuToggle() {
@@ -297,7 +298,8 @@ const { title, content } = Astro.props;
           !pageNavToggle?.contains(e.target) ||
           !sectionNavToggle?.contains(e.target)
         ) {
-          closeDetails();
+          pageNavToggle.removeAttribute("open");
+          sectionNavToggle.removeAttribute("open");
         }
       });
       document.addEventListener("astro:after-swap", closeDetails);
@@ -305,6 +307,7 @@ const { title, content } = Astro.props;
       function closeDetails() {
         pageNavToggle.removeAttribute("open");
         sectionNavToggle.removeAttribute("open");
+        closeMenu();
       }
       closeDetails();
     </script>
